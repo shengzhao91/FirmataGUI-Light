@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LaunchPad Firmata</title>
+	<script src="javascripts/jquery-1.11.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="javascripts/firmata-lib.js"></script>
+	<script src="javascripts/launchpad-gui.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" onclick="window.location.reload()" href="">LaunchPad Firmata</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<form class="navbar-form navbar-left" role="search">
+							<select id="portListSelect" class="form-control"></select>
+							<button id="connectBtn" class="btn btn-primary">Connect</button>
+							<button id="disconnectBtn" class="btn btn-danger" style="display: none;">Disconnect</button>
+						</form>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
+		</div>
+		
+		<div hidden id="appContentDiv" class="row">
+			<div id="leftPanel" class="well col-xs-5 col-xs-offset-1"></div>
+			<div id="rightPanel" class="well col-xs-5">
+				<div id="analogUpdateFreqDiv" class="well">
+					<label class="control-label">Analog Update Frequency</label>
+					<select id="analogUpdateFreqSelect" class="form-control">
+						<option>Slow</option>
+						<option selected>Fast</option>
+					</select>
+				</div>
+				<div id="i2cDiv" class="well">
+					<label class="control-label">I2C Control</label>
+					<div class="form-inline">
+						<div class="form-group">
+							<input type="text" class="form-control" id="i2cSlaveAddrTextbox" placeholder="Slave Addr e.g. 0x48">	
+							<button class="btn btn-primary" id="i2cInitBtn">Initialize</button>
+						</div>
+						
+						<div class="form-group">
+							<input type="text" class="form-control" id="i2cSendTextbox" placeholder="0x00, 0xAB, ...">
+							<button class="btn btn-primary" id="i2cWriteBtn">Write</button>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="i2cByteCntTextbox" placeholder="# of bytes">
+
+							<button class="btn btn-primary" id="i2cReadBtn">Read</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" id="i2cResultTextbox" placeholder="Result">
+					</div>
+					<p>The returned I2C result can be accessed through variable "i2cResult" in the console.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+	<!--
+	<div>
+		<div>Temperature:</div>
+		<div class="TemperatureReading"></div>
+	</div>	
+
+	<button id="populatePinsButton">Populate Pins</button>
+	-->

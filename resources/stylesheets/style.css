@@ -1,0 +1,49 @@
+body {
+	/*background: rgb(70,100,100);*/
+	background: whitesmoke;
+	padding-top: 70px; //Boostrap Fixed Nav-bar
+}
+
+.navbar-brand {
+	color: red !important;
+}
+
+#leftPanel div {
+	display: -webkit-box; 
+}
+
+.pin-analog, .pin-input, .pin-pwm, .pin-servo {
+	padding: 7px;
+	display: inline;
+}
+
+#leftPanel label {
+	margin-right: 5px;
+}
+
+/* prevent dropdown from being too wide*/
+#pinDiv .form-control {
+	width: inherit;
+}
+
+/*.pin-analog, .pin-input {
+	padding: 7px;
+	display: inline;
+}
+
+.pin-pwm, .pin-servo {
+	padding: 2px;
+}
+
+.pin-col > button, #extraPinDiv>button {
+	color: black;
+	font-size: x-large;
+	font-family: fantasy;
+	border-color: black;
+	height: 58px;
+	margin-top: 0px  !important;
+}
+
+.pin-col {
+   padding: 0 !important;
+}*/
