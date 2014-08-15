@@ -40,7 +40,7 @@ io.on('connection',function(socket){
         launchpad.digitalWrite(socket);
         launchpad.analogWrite(socket);
         launchpad.pinMode(socket);
-        launchpad.analogFreqUpdate(socket);
+        // launchpad.analogFreqUpdate(socket);
         launchpad.sendI2CConfig(socket);
         launchpad.sendI2CWriteRequest(socket);
         launchpad.sendI2CReadRequest(socket);

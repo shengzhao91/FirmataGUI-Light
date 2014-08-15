@@ -179,11 +179,11 @@ $(document).ready(function() {
 	};
 
 	var initializeRightPanel = function(){
-		$('#analogUpdateFreqSelect').change(function(){
-			var updateMode = $(this).find('option:selected').html();
-			console.log('analog update frequency mode: ' + updateMode);
-			launchpad.setAnalogUpdateFreq(updateMode);
-		});
+		// $('#analogUpdateFreqSelect').change(function(){
+		// 	var updateMode = $(this).find('option:selected').html();
+		// 	console.log('analog update frequency mode: ' + updateMode);
+		// 	launchpad.setAnalogUpdateFreq(updateMode);
+		// });
 
 		$('#i2cInitBtn').click(function(){
 			var slaveAddrText = $('#i2cSlaveAddrTextbox').val();
